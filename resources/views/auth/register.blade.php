@@ -31,7 +31,7 @@
     <![endif]-->
 </head>
 <body class="hold-transition register-page">
-<div class="register-box">
+<div class="register-box" style="width: 616px;">
     <div class="register-logo">
         <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
     </div>
@@ -58,6 +58,136 @@
                     <span class="error invalid-feedback">{{ $message }}</span>
                     @enderror
                 </div>
+
+                <div class="input-group mb-3">
+                    <input type="text"
+                           name="first_name"
+                           class="form-control @error('first_name') is-invalid @enderror"
+                           value="{{ old('first_name') }}"
+                           placeholder="First name">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                    </div>
+                    @error('first_name')
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text"
+                           name="last_name"
+                           class="form-control @error('last_name') is-invalid @enderror"
+                           value="{{ old('last_name') }}"
+                           placeholder="Last name">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                    </div>
+                    @error('last_name')
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text"
+                           name="phone"
+                           class="form-control @error('phone') is-invalid @enderror"
+                           value="{{ old('phone') }}"
+                           placeholder="Phone">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                    </div>
+                    @error('phone')
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text"
+                           name="mobile"
+                           class="form-control @error('mobile') is-invalid @enderror"
+                           value="{{ old('mobile') }}"
+                           placeholder="Mobile">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                    </div>
+                    @error('mobile')
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text"
+                           name="age"
+                           class="form-control @error('age') is-invalid @enderror"
+                           value="{{ old('age') }}"
+                           placeholder="Age">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                    </div>
+                    @error('age')
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text"
+                           name="address"
+                           class="form-control @error('address') is-invalid @enderror"
+                           value="{{ old('address') }}"
+                           placeholder="Address">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                    </div>
+                    @error('address')
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text"
+                           name="country_id"
+                           class="form-control @error('country_id') is-invalid @enderror"
+                           value="{{ old('country_id') }}"
+                           placeholder="Country">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                    </div>
+                    @error('country_id')
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text"
+                           name="zipcode"
+                           class="form-control @error('zipcode') is-invalid @enderror"
+                           value="{{ old('zipcode') }}"
+                           placeholder="Zipcode">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                    </div>
+                    @error('zipcode')
+                    <span class="error invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+
+
 
                 <div class="input-group mb-3">
                     <input type="email"
