@@ -1,9 +1,9 @@
- <div class="row">
+ {{-- <div class="row"> --}}
 
-        <div class="col-md-4">
+        <div class="col-md-3">
 
             <!-- Profile Image -->
-            <div class="card card-teal card-outline">
+            <div class="card card-yellow card-outline">
               <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-circle"
@@ -27,85 +27,85 @@
                   </li>
                 </ul>
 
-                <a href="#" class="btn btn-teal btn-block"><b>View Ongoing Contest</b></a>
+                <a href="#" class="btn btn-yellow btn-block"><b>View Ongoing Contest</b></a>
               </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
          </div>
-                        <div class="col-md-4">
-                            <!-- About Me Box -->
-                            <div class="card card-teal">
-                                <div class="card-header">
-                                    <h3 class="card-title">Address</h3>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
+        <div class="col-md-3">
+            <!-- About Me Box -->
+            <div class="card card-yellow">
+                <div class="card-header">
+                    <h3 class="card-title">Address</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
 
 
-                                    <strong><i class="fas fa-map-marker-alt mr-1"></i> Address</strong>
+                    <strong><i class="fas fa-map-marker-alt mr-1"></i> Address</strong>
 
-                                    <p class="text-muted">{{ $user->address }}</p>
+                    <p class="text-muted">{{ $user->address }}</p>
 
-                                    <hr>
+                    <hr>
 
-                                    <strong><i class="fas fa-pencil-alt mr-1"></i> Postal Code</strong>
+                    <strong><i class="fas fa-pencil-alt mr-1"></i> Postal Code</strong>
 
-                                    <p class="text-muted">
-                                    <span class="tag tag-danger">{{ $user->zipcode }}</span>
-                                    </p>
+                    <p class="text-muted">
+                    <span class="tag tag-danger">{{ $user->zipcode }}</span>
+                    </p>
 
-                                    <hr>
+                    <hr>
 
-                                    <strong><i class="fas fa-pencil-alt mr-1"></i> Country</strong>
+                    <strong><i class="fas fa-pencil-alt mr-1"></i> Country</strong>
 
-                                    <p class="text-muted">
-                                    <span class="tag tag-danger">USA</span>
-                                    </p>
+                    <p class="text-muted">
+                    <span class="tag tag-danger">USA</span>
+                    </p>
 
-                                    <hr>
-
-
-
-                                </div>
-                            <!-- /.card-body -->
-                            </div>
-                            <!-- /.md-4 -->
-                        </div>
-
-                        <div class="col-md-4">
-                            <!-- About Me Box -->
-                            <div class="card card-teal">
-                                <div class="card-header">
-                                    <h3 class="card-title">Contact</h3>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
-                                    <strong><i class="fas fa-book mr-1"></i> Email</strong>
-
-                                    <p class="text-muted">
-                                    {{ $user->email }}
-                                    </p>
-
-                                    <hr>
-
-                                    <strong><i class="fas fa-map-marker-alt mr-1"></i> Phone</strong>
-
-                                    <p class="text-muted">{{ $user->phone }}</p>
-
-                                    <hr>
-
-                                    <strong><i class="fas fa-map-marker-alt mr-1"></i>Mobile</strong>
-
-                                    <p class="text-muted">{{ $user->mobile }}</p>
-
-                                    <hr>
+                    <hr>
 
 
-                                </div>
-                            <!-- /.card-body -->
-                            </div>
 
-                        </div>
-                        <!-- /.md-4 -->
-                    </div>
+                </div>
+            <!-- /.card-body -->
+            </div>
+            <!-- /.md-4 -->
+        </div>
+
+        <div class="col-md-3">
+            <!-- About Me Box -->
+            <div class="card card-yellow">
+                <div class="card-header">
+                    <h3 class="card-title">Contact</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <strong><i class="fas fa-book mr-1"></i> Email</strong>
+
+                    <p class="text-muted">
+                    {{ $user->email }}
+                    </p>
+
+                    <hr>
+
+                    <strong><i class="fas fa-map-marker-alt mr-1"></i> Phone</strong>
+
+                    <p class="text-muted">{{ $user->phone }}</p>
+
+                    <hr>
+
+                    <strong><i class="fas fa-map-marker-alt mr-1"></i>Mobile</strong>
+
+                    <p class="text-muted">{{ $user->mobile }}</p>
+
+                    <hr>
+
+
+                </div>
+            <!-- /.card-body -->
+            </div>
+
+        </div>
+        <!-- /.md-4 -->
+    {{-- </div> --}}

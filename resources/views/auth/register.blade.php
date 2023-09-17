@@ -43,7 +43,7 @@
             <form method="post" action="{{ route('register') }}">
                 @csrf
 
-                <div class="input-group mb-3">
+                {{-- <div class="input-group mb-3">
                     <input type="text"
                            name="name"
                            class="form-control @error('name') is-invalid @enderror"
@@ -57,7 +57,7 @@
                     @error('name')
                     <span class="error invalid-feedback">{{ $message }}</span>
                     @enderror
-                </div>
+                </div> --}}
 
                 <div class="input-group mb-3">
                     <input type="text"
@@ -99,7 +99,7 @@
                            placeholder="Phone">
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-user"></span>
+                            <span class="fas fa-phone"></span>
                         </div>
                     </div>
                     @error('phone')
@@ -115,7 +115,7 @@
                            placeholder="Mobile">
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-user"></span>
+                            <span class="fas fa-phone"></span>
                         </div>
                     </div>
                     @error('mobile')
@@ -131,7 +131,7 @@
                            placeholder="Age">
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-user"></span>
+                            <span class="fas fa-child"></span>
                         </div>
                     </div>
                     @error('age')
@@ -147,7 +147,7 @@
                            placeholder="Address">
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-user"></span>
+                            <span class="fas fa-address-card"></span>
                         </div>
                     </div>
                     @error('address')
@@ -156,14 +156,16 @@
                 </div>
 
                 <div class="input-group mb-3">
-                    <input type="text"
-                           name="country_id"
-                           class="form-control @error('country_id') is-invalid @enderror"
-                           value="{{ old('country_id') }}"
-                           placeholder="Country">
+
+
+                    @if($errors->has('firstname'))
+                        {!! Form::select('country_id',  ['' => 'Please Select Country']+$countries,null, array('class' => 'form-control is-invalid','value' => old('country_id'))) !!}
+                    @else
+                        {!! Form::select('country_id',  ['' => 'Please Select Country']+$countries,null, array('class' => 'form-control','value' => old('country_id'))) !!}
+                    @endif
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-user"></span>
+                            <span class="fas fa-flag"></span>
                         </div>
                     </div>
                     @error('country_id')
@@ -179,7 +181,7 @@
                            placeholder="Zipcode">
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-user"></span>
+                            <span class="fas fa-map-pin"></span>
                         </div>
                     </div>
                     @error('zipcode')

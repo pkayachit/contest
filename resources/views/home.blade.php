@@ -28,7 +28,7 @@
           <div class="col-md-3">
 
             <!-- Profile Image -->
-            <div class="card card-teal card-outline">
+            <div class="card card-primary card-outline">
               <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-circle"
@@ -36,7 +36,7 @@
                        alt="User profile picture">
                 </div>
 
-                <h3 class="profile-username text-center">Nina Mcintire</h3>
+                <h3 class="profile-username text-center">{{ $user->name }}</h3>
 
                 <p class="text-muted text-center">Photographer</p>
 
@@ -52,64 +52,18 @@
                   </li>
                 </ul>
 
-                <a href="#" class="btn btn-teal btn-block"><b>View Ongoing Contest</b></a>
+                <a href="#" class="btn btn-primary btn-block"><b>View Ongoing Contest</b></a>
               </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
 
-            <!-- About Me Box -->
-            {{-- <div class="card card-teal">
-              <div class="card-header">
-                <h3 class="card-title">About Me</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <strong><i class="fas fa-book mr-1"></i> Email</strong>
-
-                <p class="text-muted">
-                  mathew@gmail.com
-                </p>
-
-                <hr>
-
-                <strong><i class="fas fa-map-marker-alt mr-1"></i> Address</strong>
-
-                <p class="text-muted">11, Lake View Villas, 8th Main, Malibu, California</p>
-
-                <hr>
-
-                <strong><i class="fas fa-pencil-alt mr-1"></i> Postal Code</strong>
-
-                <p class="text-muted">
-                  <span class="tag tag-danger">560085</span>
-                 </p>
-
-                <hr>
-
-                <strong><i class="fas fa-pencil-alt mr-1"></i> Country</strong>
-
-                <p class="text-muted">
-                  <span class="tag tag-danger">USA</span>
-                 </p>
-
-                <hr>
-
-
-                <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
-
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
-              </div>
-              <!-- /.card-body -->
-            </div> --}}
-            <!-- /.card -->
-
-
-
 
           </div>
           <!-- /.col -->
           <div class="col-md-9">
+          @include('adminlte-templates::common.errors')
+          @include('flash::message')
             <div class="card">
               <div class="card-header p-2">
                 <ul class="nav nav-pills">
@@ -126,7 +80,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <!-- About Me Box -->
-                            <div class="card card-teal">
+                            <div class="card card-primary">
                                 <div class="card-header">
                                     <h3 class="card-title">Address</h3>
                                 </div>
@@ -136,14 +90,14 @@
 
                                     <strong><i class="fas fa-map-marker-alt mr-1"></i> Address</strong>
 
-                                    <p class="text-muted">11, Lake View Villas, 8th Main, Malibu, California</p>
+                                    <p class="text-muted">{{ $user->address }}</p>
 
                                     <hr>
 
                                     <strong><i class="fas fa-pencil-alt mr-1"></i> Postal Code</strong>
 
                                     <p class="text-muted">
-                                    <span class="tag tag-danger">560085</span>
+                                    <span class="tag tag-danger">{{ $user->zipcode }}</span>
                                     </p>
 
                                     <hr>
@@ -166,7 +120,7 @@
 
                         <div class="col-md-4">
                             <!-- About Me Box -->
-                            <div class="card card-teal">
+                            <div class="card card-primary">
                                 <div class="card-header">
                                     <h3 class="card-title">Contact</h3>
                                 </div>
@@ -175,20 +129,20 @@
                                     <strong><i class="fas fa-book mr-1"></i> Email</strong>
 
                                     <p class="text-muted">
-                                    mathew@gmail.com
+                                    {{ $user->email }}
                                     </p>
 
                                     <hr>
 
                                     <strong><i class="fas fa-map-marker-alt mr-1"></i> Phone</strong>
 
-                                    <p class="text-muted">8888899999</p>
+                                    <p class="text-muted">{{ $user->phone }}</p>
 
                                     <hr>
 
                                     <strong><i class="fas fa-map-marker-alt mr-1"></i>Mobile</strong>
 
-                                    <p class="text-muted">878787889</p>
+                                    <p class="text-muted">{{ $user->mobile }}</p>
 
                                     <hr>
 
@@ -254,76 +208,80 @@
                   <!-- /.tab-pane -->
 
                   <div class="tab-pane" id="settings">
-                    <form class="form-horizontal">
+                    {{-- <form class="form-horizontal"> --}}
+
+
+
+
+                    {!! Form::model($user, ['route' => ['updateProfile'], 'method' => 'post']) !!}
                       <div class="form-group row">
-                        <label for="inputName" class="col-sm-2 col-form-label">First Name</label>
+                        {!! Form::label('first_name', 'First Name',['class' => 'col-sm-2 col-form-label']) !!}
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputName" placeholder="First Name">
+                          {!! Form::hidden('id', $user->id, ['class' => 'form-control','maxlength' => 500,'maxlength' => 500, 'placeholder' => 'First Name']) !!}
+                          {!! Form::text('first_name', $user->first_name, ['class' => 'form-control','maxlength' => 500,'maxlength' => 500, 'placeholder' => 'First Name']) !!}
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="inputName" class="col-sm-2 col-form-label">Last Name</label>
+                        {!! Form::label('last_name', 'Last Name',['class' => 'col-sm-2 col-form-label']) !!}
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputName" placeholder="Last Name">
+                          {!! Form::text('last_name', $user->last_name, ['class' => 'form-control','maxlength' => 500,'maxlength' => 500, 'placeholder' => 'First Name']) !!}
                         </div>
                       </div>
-                      <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                       <div class="form-group row">
+                        {!! Form::label('email', 'Email',['class' => 'col-sm-2 col-form-label']) !!}
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                          {!! Form::text('email', $user->email, ['class' => 'form-control','maxlength' => 500,'maxlength' => 500, 'placeholder' => 'Email' , 'disabled' => 'disabled']) !!}
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="inputName2" class="col-sm-2 col-form-label">Phone</label>
+                        {!! Form::label('phone', 'Phone',['class' => 'col-sm-2 col-form-label']) !!}
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputName2" placeholder="Phone">
+                          {!! Form::text('phone', $user->phone, ['class' => 'form-control','maxlength' => 500,'maxlength' => 500, 'placeholder' => 'Phone']) !!}
                         </div>
                       </div>
-                      <div class="form-group row">
-                        <label for="inputName2" class="col-sm-2 col-form-label">Mobile</label>
+                       <div class="form-group row">
+                        {!! Form::label('mobile', 'Mobile',['class' => 'col-sm-2 col-form-label']) !!}
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputName2" placeholder="Mobile">
+                          {!! Form::text('mobile', $user->mobile, ['class' => 'form-control','maxlength' => 500,'maxlength' => 500, 'placeholder' => 'Mobile']) !!}
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="inputName2" class="col-sm-2 col-form-label">Age</label>
+                        {!! Form::label('age', 'Age',['class' => 'col-sm-2 col-form-label']) !!}
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputName2" placeholder="Age">
+                          {!! Form::text('age', $user->age, ['class' => 'form-control','maxlength' => 500,'maxlength' => 500, 'placeholder' => 'Age']) !!}
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="inputExperience" class="col-sm-2 col-form-label">Address</label>
+                        {!! Form::label('address', 'Address',['class' => 'col-sm-2 col-form-label']) !!}
                         <div class="col-sm-10">
-                          <textarea class="form-control" id="inputExperience" placeholder="Address"></textarea>
+                          {!! Form::text('address', $user->address, ['class' => 'form-control','maxlength' => 500,'maxlength' => 500, 'placeholder' => 'Address']) !!}
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="inputSkills" class="col-sm-2 col-form-label">Country</label>
+                        {!! Form::label('country', 'Country',['class' => 'col-sm-2 col-form-label']) !!}
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputSkills" placeholder="Country">
+                          {{-- {!! Form::text('country', null, ['class' => 'form-control','maxlength' => 500,'maxlength' => 500, 'placeholder' => 'Country']) !!} --}}
+
+                           @if($errors->has('firstname'))
+                                {!! Form::select('country_id',  ['' => 'Please Select Country']+$countries,$user->country_id, array('class' => 'form-control is-invalid','value' => old('country_id'))) !!}
+                           @else
+                                {!! Form::select('country_id',  ['' => 'Please Select Country']+$countries,$user->country_id, array('class' => 'form-control','value' => old('country_id'))) !!}
+                           @endif
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="inputSkills" class="col-sm-2 col-form-label">Zipcode</label>
+                        {!! Form::label('zipcode', 'Zipcode',['class' => 'col-sm-2 col-form-label']) !!}
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputSkills" placeholder="Zipcode">
+                          {!! Form::text('zipcode', $user->zipcode, ['class' => 'form-control','maxlength' => 500,'maxlength' => 500, 'placeholder' => 'Zipcode']) !!}
                         </div>
                       </div>
-                      <div class="form-group row">
-                        <div class="offset-sm-2 col-sm-10">
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
+
                       <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
                           <button type="submit" class="btn btn-danger">Submit</button>
                         </div>
                       </div>
-                    </form>
+                    {!! Form::close() !!}
                   </div>
                   <!-- /.tab-pane -->
                 </div>

@@ -39,7 +39,7 @@
     @stack('page_css')
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini control-sidebar-slide-open sidebar-collapse layout-fixed">
 <div class="wrapper">
     <!-- Main Header -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -53,14 +53,14 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                    <img src="dist/img/user2-160x160.jpg"
+                    <img src="{{ asset('dist/img/user2-160x160.jpg') }}"
                          class="user-image img-circle elevation-2" alt="User Image">
                     <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
-                    <li class="user-header bg-teal">
-                        <img src="dist/img/user2-160x160.jpg"
+                    <li class="user-header bg-primary">
+                        <img src="{{ asset('dist/img/user2-160x160.jpg') }}"
                              class="img-circle elevation-2"
                              alt="User Image">
                         <p>
@@ -70,7 +70,7 @@
                     </li>
                     <!-- Menu Footer-->
                     <li class="user-footer">
-                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                        <a href="{{ route('home') }}" class="btn btn-default btn-flat">Profile</a>
                         <a href="#" class="btn btn-default btn-flat float-right"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Sign out

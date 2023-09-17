@@ -23,5 +23,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/admin-users', [App\Http\Controllers\HomeController::class, 'adminUsers'])->name('adminUsers');
 
+Route::post('/update-profile', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('updateProfile');
+
 
 Route::resource('users', App\Http\Controllers\UserController::class);
+
+
+
+
+
+
+Route::resource('countries', App\Http\Controllers\CountryController::class);

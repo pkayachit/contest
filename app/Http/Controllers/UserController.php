@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Response;
 
+
 class UserController extends AppBaseController
 {
     /** @var UserRepository $userRepository*/
@@ -153,4 +154,6 @@ class UserController extends AppBaseController
 
         return redirect(route('users.index'));
     }
+
+
 }

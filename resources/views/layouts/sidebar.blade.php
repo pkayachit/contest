@@ -1,4 +1,4 @@
-<aside class="main-sidebar elevation-4 sidebar-light-olive">
+<aside class="main-sidebar elevation-4 sidebar-light-primary">
     <a href="{{ url('/home') }}" class="brand-link">
         <img src="{{ asset('dist/img/AdminLTELogo.png') }}"
              alt="{{ config('app.name') }} Logo"
